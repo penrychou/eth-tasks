@@ -12,7 +12,7 @@ contract InsertSortTest is Test {
         insertSort = new InsertSort();
     }
 
-    function test_Increment() public {
+    function test_Sort() public {
         insertSort.getArr();
         insertSort.sort();
         assertTrue(checkArray(insertSort.getArr(), sortedArr));
