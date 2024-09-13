@@ -6,22 +6,22 @@ import {InsertSort} from "../src/InsertSort.sol";
 
 contract InsertSortTest is Test {
     InsertSort public insertSort;
+    uint256[] sortedArr = [1, 3, 4, 6, 7];
 
     function setUp() public {
         insertSort = new InsertSort();
     }
 
     function test_Increment() public {
-        uint256[5] memory arr = [3, 6, 7, 1, 4];
-        uint256[5] memory sortedArr = [1, 3, 4, 6, 7];
-        insertSort.sort(arr);
-        assertTrue(checkArray(arr, sortedArr));
+        insertSort.getArr();
+        insertSort.sort();
+        assertTrue(checkArray(insertSort.getArr(), sortedArr));
     }
 
     function checkArray(
         uint256[] memory arr1,
         uint256[] memory arr2
-    ) internal returns (bool) {
+    ) internal pure returns (bool) {
         if (arr1.length != arr2.length) {
             return false;
         }
