@@ -20,12 +20,13 @@ contract InsertSort {
                 }
                 j--;
             }
+
+            // 将key放置在正确的位置
             if (f) {
                 arr[0] = key;
             } else {
                 arr[j + 1] = key;
             }
-            // 将key放置在正确的位置
         }
     }
 
